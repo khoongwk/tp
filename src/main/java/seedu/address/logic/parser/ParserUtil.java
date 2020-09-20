@@ -123,6 +123,11 @@ public class ParserUtil {
         return tagSet;
     }
 
+    /**
+     * Parses Remark.
+     * @param remark Remark string for the person.
+     * @return The Remark object for that person.
+     */
     public static Remark parseRemark(String remark) {
         requireNonNull(remark);
         String trimmedRemark = remark.trim();
