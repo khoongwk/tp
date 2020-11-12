@@ -16,9 +16,9 @@ Fret not, our application, Homerce, will reduce the hassle of managing your busi
 Homerce is an all-in-one application that helps home-based beauty salon owners consolidate their business details - 
 such as their appointments, revenue and expenses - into a single application. 
 
-The application uses a Command Line Interface (CLI); this means that you operate the application by typing commands 
+The application uses a Command Line Interface [(CLI)](#6-glossary); this means that you operate the application by typing commands 
 into a Command Box. If you are fast at typing, you can operate the application faster than other Graphical User Interface 
-(GUI) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
+[(GUI)](#6-glossary) applications; GUI applications allow users to interact with the application through graphical icons such as buttons.
 
 If you are interested, jump to [Section 2 - Quick Start](#2-quick-start) to learn how to start managing your business using Homerce.
 
@@ -109,6 +109,8 @@ The table below explains some important technical terms to help you understand a
 * Prefixes - `d/`, `f/`, `v/`, `dt/`, `t/`  <br>
 * Parameters - `DESCRIPTION`, `IS_FIXED`, `VALUE`, `DATE`, `TAG`
 
+#### 3.2.4. Command Format
+
 The following points explain the format of a command. 
 More examples will be provided for each command in [Section 4 - Features](#4-features).
 
@@ -148,8 +150,8 @@ You may enter a command into the _Command Box_ to use each feature or sub-featur
 
 ### 4.1 Client Manager (Done by Chang Rui Feng)
 
-Homerce knows that managing the contacts of your clients is a must for any business.
-Thus, this feature allows you to keep track of all the relevant information needed about your clients.
+Homerce knows that managing the contacts of your clients is a must for your home-based beauty salon.
+Thus, this feature helps you to keep track of all the relevant information needed about your clients.
 
 #### 4.1.1. Client Manager Command Parameters
 
@@ -288,7 +290,7 @@ Format : `findcli [n/NAME]* [p/PHONE]*`
 Example :
 
 Let's say you have many clients in your client list and wish to find more information on the client named David. <br>
-You can follow the steps below to get a list of clients named John
+You can follow the steps below to get a list of clients named David. 
 
 Steps :
 1. Type `findcli n/David` in the _Command Box_.
@@ -296,7 +298,7 @@ Steps :
 
 Outcome :
 1. The *Result Display* will show a success message.
-2. Homerce will list out all the clients with John in their name.
+2. Homerce will list out all the clients with David in their name.
 
 ![findcli](images/findcli.png) <br>
 _Figure 6 - GUI for `findcli`_
@@ -354,7 +356,8 @@ _Figure 8 - GUI for `clearcli`_
 
 ### 4.2. Service Manager (Done by Hans Sebastian Tirtaputra)
 
-This feature allows you to manage the services that your home-based beauty salon provides. You can record the 
+Homerce knows that being able to keep track of your services is important to run your home-based beauty salon effectively.
+Thus, this feature allows you to manage the services that your home-based beauty salon provides. You can record the 
 following information about your services: `TITLE`, `DURATION` and `PRICE`.
 
 #### 4.2.1. Service Manager Command Parameters
@@ -367,7 +370,7 @@ The table below shows a list of command parameters that will be used in this fea
 |`TITLE`| The title of the service you are providing. It must be alphanumeric words not more than 50 characters long. You can not have two services with the same title. |E.g `Lash Lift`
 |`DURATION`| The duration of the service must be in half hour intervals between 0.5 and 23.5.| E.g `1.5`
 |`PRICE`| The revenue received from the service. <br> <br> It must be a positive number above 0.00 and below 1,000,000.00 and must have two decimal places. | E.g `5.50`
-|`SERVICE_CODE`| The service code is the code that identifies a particular type of service provided. <br> <br> It must be an alphanumeric word of 5 characters long.| E.g. If you have added an eyelash extension service into Homerce and its service code is `SC001`. <br> <br> Typing `SC001` would refers to the eyelash extension service.
+|`SERVICE_CODE`| The service code is the code that identifies a particular type of service provided. <br> <br> It must be an alphanumeric word of 5 characters long.| E.g. If you have added an eyelash extension service into Homerce and its service code is `SC001`, typing `SC001` would refer to the eyelash extension service.
 |`INDEX`| The index number of the service in the displayed service list.<br> <br> The first entry of the list has an index number of `1` and all entries are listed in increasing index numbers. | E.g Typing in `5` would refer to the fifth service in the displayed service list.
 
 #### 4.2.2. Add a service: `addsvc`
@@ -392,7 +395,7 @@ Adding the above service:
 1. Press `Enter` to execute.
 
 Outcome:
-1. The *Result Display* will show success message.
+1. The *Result Display* will show a success message.
 1. Homerce will switch to the *Services Tab*.
 1. You can now see all your services including the newly added service.
 
@@ -412,7 +415,7 @@ Format: `editsvc INDEX [t/TITLE] [du/DURATION] [p/PRICE]`
 * You are unable to edit an existing service's service code. Service codes are automatically generated by the Service Manager when adding a new service.
 * Refer to [Service Manager Command Parameters](#421-service-manager-command-parameters) for more details about each parameter.
 * Editing a service in the service manager will not change the details of any appointments associated with that service as they are
- kept as separate records and might result in unwanted side effects to the revenues and clients. Please edit the appointment after editing the service if you want the service's edited details to be reflected.
+ kept as separate records and might result in unwanted side effects to the revenue and clients. Please edit the appointment after editing the service if you want the service's edited details to be reflected.
 
 
 </div>
@@ -572,7 +575,7 @@ This feature uses a number of parameters, which are detailed below.
 |---------|---------|---------
 |`DATE`  | The date of the appointment. <br> <br> It must be in the format of `dd-MM-yyyy`. | E.g. Typing `28-09-2020` would mean 28 September 2020.
 |`TIME` | The time of the appointment. <br> <br> It must be in the format of `HHMM` and the appointment cannot be conducted past midnight. | E.g. Typing `1730` would mean 5:30 PM.  <br> <br> E.g. Typing `0900` would mean 9:00 AM.
-|`SERVICE_CODE`| The service code is the code that identifies the type of service provided. <br> <br> It must be alphanumeric words of 5 characters long which corresponds to an existing service. | E.g. If you have added an eyelash extension service into Homerce and its service code is `SC001`. <br> <br> Typing `SC001` would refer to the eyelash extension service.
+|`SERVICE_CODE`| The service code is the code that identifies a particular type of service provided. <br> <br> It must be an alphanumeric word of 5 characters long.| E.g. If you have added an eyelash extension service into Homerce and its service code is `SC001`, typing `SC001` would refer to the eyelash extension service.
 |`PHONE_NUMBER` | The phone number of the client. <br> <br> It must be at least 3 digits which corresponds to the phone number of an existing client.| E.g. Typing `81281234` or `91235678` is a valid phone number.  <br> <br> E.g. Typing `99` would not be a recognised number.
 |`NAME` | The name of the client booking the appointment. <br> <br> It must be a alphanumeric word and incomplete words are not accepted. | E.g. If a client with the name `Hartin Menz` called to book an appointment, the word `Hartin` would be accepted as a parameter for `NAME` but not `Hart`.
 |`INDEX` | The index of the appointment in the displayed list. <br> <br> It must be a valid index number. | E.g. Typing `2` would mean the appointment with index-2 in the displayed list.
@@ -839,9 +842,12 @@ Outcome:
 
 ### 4.4. Revenue Tracker (Done by Galvin Leow)
 
-Homerce knows that revenue tracking is very important for your business.
-Thus, this feature allows you to track the revenue that you have generated effortlessly.
-Revenue will be automatically recorded when an appointment is indicated as done.
+Homerce knows that keeping track of your revenue is very important for your home-based beauty salon.
+Thus, this feature will help you to keep track of the revenue of your business effortlessly.
+Revenue will be automatically recorded when an appointment is marked as done. For example, let's say that you have an 
+appointment for a Lash Lift service on the 22nd of November 2020. Once you have completed the appointment, you can
+simply mark the appointment as done in Homerce, the revenue from the Lash Lift service will then be recorded in
+Homerce automatically.
 
 #### 4.4.1. Revenue Tracker Command Parameters
 
@@ -851,13 +857,13 @@ The table below shows a list of command parameters that will be used in this fea
 | Parameter Name | Description | Example
 |---------|---------|---------
 |`DATE`  | The date that the revenue was credited. <br> <br> It must be in the format of `dd-MM-yyyy`. | E.g. Typing `22-10-2020` would mean 22 October 2020.
-|`SERVICE_CODE`| The service code is the code that identifies a particular type of service provided. <br> <br> It must be alphanumeric words of 5 characters long. | E.g. If you have added an eyelash extension service into Homerce and its service code is `SC001`. <br> <br> Typing `SC001` would refers to the eyelash extension service.
+|`SERVICE_CODE`| The service code is the code that identifies a particular type of service provided. <br> <br> It must be an alphanumeric word of 5 characters long.| E.g. If you have added an eyelash extension service into Homerce and its service code is `SC001`, typing `SC001` would refer to the eyelash extension service.
 |`ORDER` | The order refers to ascending or descending. <br> <br> It must be in the format of `asc` or `desc` | E.g. Typing `asc` would mean ascending.  <br> <br> E.g. Typing `desc` would mean descending.
 |`INDEX`| The index number of the revenue in the displayed revenue list.<br> <br> The first entry of the list has an index number of `1` and all entries are listed in increasing index numbers. | E.g Typing in `5` would refer to the fifth revenue in the displayed revenue list.
 
 #### 4.4.2. Find a revenue : `findrev`
 
-You can use this command to find revenues by 'date' or 'service code' in the Revenue Tracker.
+You can use this command to find revenue by 'date' or 'service code' in the Revenue Tracker.
 
 Format : `findrev [dt/DATE]* [s/SERVICE_CODE]*`
 
@@ -870,8 +876,8 @@ Format : `findrev [dt/DATE]* [s/SERVICE_CODE]*`
 
 Example :
 
-Let's say you have just stopped operations for the day, and you wish to view all the revenues generated for today (22-10-2020). <br>
-You can follow the steps below to get the list of revenues for the day.
+Let's say you have just stopped operations for the day, and you wish to view all the revenue generated for today (22-10-2020). <br>
+You can follow the steps below to get the list of revenue for the day.
 
 Steps :
 1. Type `findrev dt/22-10-2020` in the _Command Box_.
@@ -880,12 +886,12 @@ Steps :
 Outcome : 
 1. The *Result Display* will show a success message.
 1. Homerce will list out all the revenue for 22-10-2020 in the _Revenue Tab_.  
-1. You can now see all your revenues earned on `22-10-2020`.
+1. You can now see all your revenue earned on `22-10-2020`.
 
 ![addrev](images/revenue/FindRevenue.png) <br>
 *Figure 23 - GUI outcome for `findrev`*
 
-#### 4.4.3. Sort revenues: `sortrev`
+#### 4.4.3. Sort revenue: `sortrev`
 
 You can use this command to sort the list of revenue in ascending or descending order by value in the Revenue Tracker.
 
@@ -901,7 +907,7 @@ Format : `sortrev ORDER`
 Example :
 
 Let's say you wish to view your revenue from highest to lowest cost to determine which revenue contributes most to your profits. <br>
-You can follow the steps below to sort your list of revenues.
+You can follow the steps below to sort your list of revenue.
 
 Steps :
 1. Type `sortrev desc` in the _Command Box_.
@@ -910,12 +916,12 @@ Steps :
 Outcome : 
 1. The *Result Display* will show a success message.
 1. Homerce will list out all the revenue entries sorted from highest to lowest cost in the _Revenue Tab_.
-1. You can now see your revenues sorted by descending order.
+1. You can now see your revenue sorted by descending order.
 
 ![sortrev](images/revenue/SortRevenue(Desc).png) <br>
 *Figure 24 - GUI outcome for `sortrev`*
 
-#### 4.4.4. List revenues : `listrev`
+#### 4.4.4. List revenue : `listrev`
 
 You can use this command to list all your revenue entries in the Revenue Tracker. The list will be sorted by descending chronological order.
 
@@ -923,7 +929,7 @@ Format : `listrev`
 
 Example :
 
-Let's say you wish to list your revenues to view all the earnings that you currently have.<br>
+Let's say you wish to list your revenue to view all the earnings that you currently have.<br>
 You can follow the steps below to list all your revenue entries.
 
 Steps :
@@ -933,7 +939,7 @@ Steps :
 Outcome : 
 1. The *Result Display* will show a success message.
 1. Homerce will list out all your revenue entries in the _Revenue Tab_.
-1. You can now see all your revenues sort by descending chronological order.
+1. You can now see all your revenue sort by descending chronological order.
 
 ![listrev](images/revenue/ListRevenue.png) <br>
 *Figure 25 - GUI outcome for `listrev`*
@@ -954,7 +960,7 @@ Format : `clearrev`
 
 Example :
 
-Let's say you wish to remove all revenues entries in the Revenue Tracker and restart your revenue tracking from scratch. <br>
+Let's say you wish to remove all revenue entries in the Revenue Tracker and restart your revenue tracking from scratch. <br>
 You can follow the steps below to clear all your revenue entries.
 
 Steps :
@@ -964,7 +970,7 @@ Steps :
 Outcome : 
 1. The *Result Display* will show a success message.
 1. Homerce will clear all the revenue data.
-1. You will have no more revenues listed in the tracker.
+1. You will have no more revenue listed in the tracker.
 
 ![clearrev](images/revenue/ClearRevenue.png) <br>
 *Figure 26 - GUI outcome for `clearrev`*
@@ -975,6 +981,9 @@ Homerce understands that expense tracking is essential in managing your business
 Thus, this feature allows you to track your expenses seamlessly and with ease. <br><br>
 Our expense tracker supports both fixed expenses that recur monthly, and one-time expenses that are incurred only once.
 A fixed expense only has to be added to the tracker once, as Homerce will automatically record the same fixed expense for you every month.
+For example, the monthly air conditioning bill is a fixed expense as it recurs every month. Let's say that you have
+added air conditioning as a fixed expense on January, you don't need to add it again on next month of February and all subsequent months.
+Homerce will automatically record the air conditioning expense for you.
 <br><br> You can record the following information about your expenses: `DESCRIPTION`, `IS_FIXED`, `VALUE`, `DATE` and `TAG`.
 
 #### 4.5.1. Expense Tracker Command Parameters
@@ -984,7 +993,7 @@ The table below shows a list of command parameters that will be used.
 
 | Parameter Name | Description | Example
 |---------|---------|---------
-|`DESCRIPTION`  | The description of the expense. <br><br> It must be one or more alphanumeric words or special characters not more than 50 characters long in total. | E.g. Typing `Conditioner` as the description indicates that the expense was made on a bottle of Conditioner.
+|`DESCRIPTION`  | The description of the expense. <br><br> It must be one or more alphanumeric words or special characters, not more than 50 characters long in total. | E.g. Typing `Conditioner` as the description indicates that the expense was made on a bottle of Conditioner.
 |`IS_FIXED`| The indication of whether an expense is fixed. <br> <br> It must be in the format of `y` or `n`. <br><br> *Note: A fixed expense is an expense that recurs monthly. For example, the monthly air-conditioning bill is a fixed expense as it recurs every month, while a box of tissues is a one-time expense and should not be indicated as fixed.* | E.g. Typing `y` would mean the expense is fixed. <br>You only have to add a fixed expense to the tracker once, as Homerce will automatically record the same expense for you every month. <br> <br> E.g. Typing `n` would mean the expense is not fixed.
 |`VALUE` | The value refers to the monetary value of the expense. <br> <br> It must be a positive number above 0.00 and below 1,000,000.00 and must have two decimal places. | E.g. Typing `10.00` would mean the expense costs $10.00.
 |`DATE` | The date of the expense. <br> <br> It must be a valid date in the format of `dd-MM-yyyy`. A valid year is any year from 0001 to 9999. | E.g. Typing `28-09-2020` would mean the expense was made on 28 September 2020.
@@ -1458,8 +1467,10 @@ You can copy and transfer the data folder into the same directory as Homerce on 
 
 ## 6. Glossary
 
-* **Alphanumeric**: Alphanumeric does not include special characters, it only includes letters a to z (uppercase and lowercase) and digits 0 to 9.
+* **Alphanumeric**: Alphanumeric characters do not include special characters, it only includes letters a to z (uppercase and lowercase) and digits 0 to 9.
 * **Special Characters**: Refers to any of the characters within these set of characters: +!#$%&'*+/=?\`{}~^.-&#124;
+* **GUI**: Graphical User Interface - a system of interactive visual components for computer software.
+* **CLI**: Command Line Interface - processes commands to a computer program in the form of lines of text.
 
 --------------------------------------------------------------------------------------------------------------------
 
